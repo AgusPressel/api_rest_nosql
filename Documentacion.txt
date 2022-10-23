@@ -1,0 +1,48 @@
+http://127.0.0.1:5000
+
+
+
+#Traer datos de Session
+/* Pasando el ID de la session solicitada por parametro en una petición GET, el sevicio de la API Rest devolvera 
+todos los datos para este ID */
+[GET] {url}/session/<id>
+
+
+#Crear Session
+/*  Pasando los datos de la session mediante JSON (con ip, pais, inicio session como datos obligatorios) en una petición POST
+el sevicio de la API Rest creara la session */
+[POST] {url}/session
+{
+  "ip":"1.1.1.1",  // requerido
+  "pais":"uruguay", // requerido
+  "inicioSession":"2020-10-20 18:27:00", // requerido
+  "finSession":"2020-10-20 19:27:00",
+  "datoExtra":"datoPrueba"
+  
+}
+
+#Borra una session y sus datos
+/* Pasando el ID de la session solicitada por parametro en una petición DELETE,
+el sevicio de la API Rest eliminara todos los datos de esta session  */
+[DELETE] {url}/session/<id>
+
+
+#Actualizar datos de session
+/* Pasando el ID de la session solicitada por parametro en una petición PUT y los datos deseados mediante JSON,
+el sevicio de la API Rest actualizar todos los datos de esta session  */
+[PUT] {url}/session/<id>
+
+#Traer todas las session con sus datos
+/* Solicitando el sevicio de la API Rest devolvera todos las session requistradas con sus datos correspondientes
+todos los datos para este ID */
+[GET] {url}/sessiones
+
+#Traer datos de session con inicio Session de sesion entre desde y hasta
+/* Pasando una fecha DESE y/o HASTA por parametros, el sevicio de la API Rest devolvera 
+todos los datos para las sessiones que se encuentre teniendo un inicio de session mayor o igual a el valor Desde  y menor o igual a el valor Hasta  */
+[GET] {url}/sessiones_con_inicio/<desde>/<hasta>
+
+#Traer datos de session con fin Session de sesion entre desde y hasta
+/* Pasando una fecha DESE y/o HASTA por parametros, el sevicio de la API Rest devolvera 
+todos los datos para las sessiones que se encuentre teniendo un fin de session mayor o igual a el valor Desde  y menor o igual a el valor Hasta  */
+[GET] {url}/session/<id>
