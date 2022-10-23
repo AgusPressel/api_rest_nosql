@@ -10,3 +10,6 @@ Requerimientos:
 (comandos desde consola/terminal/powershell)
 - installar los modulos de python dentro de tu entorno virtual usando pip install -r requeriment.txt, con esto se instalaran todos los modulos necesarios para nuestra API Rest
 - ejecutar api flask, ejecutando comando flask run
+
+
+Consumir servicios de la aplicacion enviado peticiones a la misma
