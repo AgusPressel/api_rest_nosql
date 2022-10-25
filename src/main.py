@@ -23,7 +23,7 @@ def get_session(id):
 def crear_session():
     jsonDatos = request.json
 
-    if jsonDatos['ip'] and jsonDatos['pais'] and jsonDatos['inicioSession'] :
+    if jsonDatos['ip'] and jsonDatos['dispositivo'] and jsonDatos['inicioSession'] :
         datos = jsonDatos
         # datos['ip'] = jsonDatos['ip']
         # datos['pais'] = jsonDatos['pais']

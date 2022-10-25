@@ -9,16 +9,15 @@ todos los datos para este ID */
 
 
 #Crear Session
-/*  Pasando los datos de la session mediante JSON (con ip, pais, inicio session como datos obligatorios) en una petición POST
+/*  Pasando los datos de la session mediante JSON (con ip, dispositivo, inicio session como datos obligatorios) en una petición POST
 el sevicio de la API Rest creara la session */
 [POST] {url}/session
 {
   "ip":"1.1.1.1",  // requerido
-  "pais":"uruguay", // requerido
+  "dispositivo":"celular", // requerido
   "inicioSession":"2020-10-20 18:27:00", // requerido
   "finSession":"2020-10-20 19:27:00",
   "datoExtra":"datoPrueba"
-  
 }
 
 #Borra una session y sus datos
