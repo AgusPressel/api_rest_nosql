@@ -84,6 +84,23 @@ def get_sessiones():
     return Response(datosJson,mimetype='application/json')
 
 
+
+@app.route('/session_por_dato/',methods=['GET'])
+def get_session_por_dato():
+    jsonDatos = request.json
+    if jsonDatos and len(jsonDatos) ==1: 
+        parametro = None
+        dato={}
+        for key in jsonDatos:
+            dato['$eq']=jsonDatos[key]
+            parametro = key        
+        sessiones = mongo.db.sessiones.find({parametro:dato})
+        datosJson = json_util.dumps(sessiones)
+        return Response(datosJson,mimetype='application/json')
+    else:
+        print('no',jsonDatos)
+    return 'ok'
+
 @app.route('/sessiones_con_inicio/<desde>/<hasta>',methods=['GET'])
 def get_sessiones_con_inicio(desde=None,hasta=None):
     if desde or hasta:

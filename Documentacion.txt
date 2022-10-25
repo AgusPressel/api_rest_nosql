@@ -45,3 +45,12 @@ todos los datos para las sessiones que se encuentre teniendo un inicio de sessio
 /* Pasando una fecha DESE y/o HASTA por parametros, el sevicio de la API Rest devolvera 
 todos los datos para las sessiones que se encuentre teniendo un fin de session mayor o igual a el valor Desde  y menor o igual a el valor Hasta  */
 [GET] {url}/session/<id>
+
+
+#Traer datos de session buscados por un parametro
+/* Pasando un parametro por JSON, el sevicio de la API Rest devolvera 
+todos los datos para las sessiones que se encuentre teniendo igualdad al parametro enviado */
+[GET] {url}/session_por_dato/
+{
+  "datoExtra": "datoPrueba"
+}
